@@ -122,7 +122,8 @@ namespace AccesoDatos.Operaciones
                             Direccion = A.Direccion,
                             Edad = A.Edad,
                             Email = A.Email,
-                            Asignatura = Asig.Nombre
+                            Asignatura = Asig.Nombre,
+                            MatriculaId = M.Id
                         };
 
             return query.ToList();

@@ -15,5 +15,7 @@
         public string Email { get; set; }
 
         public string Asignatura { get; set; }
+
+        public int MatriculaId { get; set; }
     }
 }

@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import * as API from './services/data'
+import { Link } from "react-router-dom";
+
 const StudentList = () => {
   let usuario = sessionStorage.getItem("usuario");
   const [students, setStudents]= useState([]);
+  console.log(students);
 
   useEffect(()=>{
      API.getStudents(usuario).then(setStudents);
-  }, [usuario]);
+  }, []);
 
   function deleteStudent(id){
     API.deleteStudent(id).then(result => {
@@ -46,8 +49,8 @@ const StudentList = () => {
                   <td>{student.edad}</td>                  
                   <td>{student.email}</td>                  
                   <td>{student.asignatura}</td>
-                  <td>Editar</td>
-                  <td>Calificar</td>
+                  <td><Link to={'/student/' + student.id}>Editar</Link></td>
+                  <td><Link to={'/student/califications/' + student.matriculaId}>Calificar</Link></td>
                   <td onClick={() => deleteStudent(student.id)}>Eliminar</td>                  
                 </tr>
               ))
