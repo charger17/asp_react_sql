@@ -174,7 +174,7 @@ namespace AccesoDatos.Operaciones
 
                 if (alumno != null)
                 {
-                    var matriculas = context.Matriculas.Where(m => m.AlumnoId == id);
+                    var matriculas = context.Matriculas.Where(m => m.AlumnoId == id).ToList();
 
                     foreach (var matricula in matriculas)
                     {
