@@ -4,11 +4,12 @@ import Dashboard from './Dashboard';
 import StudentNew from './StudentNew';
 import StudentEdit from './StudentEdit';
 import StudentCalifications from './StudentCalifications';
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 function App() {
   return(
-
+    <ChakraProvider>
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/dashboard' element={<Dashboard/>}/>
@@ -16,7 +17,7 @@ function App() {
         <Route path='/student/:studentId' element={<StudentEdit/>} />
         <Route path='/student/califications/:matricula' element={<StudentCalifications/>} />
       </Routes>
-
+      </ChakraProvider>
   );
 }
 
